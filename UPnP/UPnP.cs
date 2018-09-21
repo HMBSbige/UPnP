@@ -45,5 +45,11 @@ namespace UPnP
 		{
 			Mappings.Remove(ExternalPort, Typestr);
 		}
+
+		public static void Remove(int eport, ProtocolType type)
+		{
+			var mapping = new UPnPNAT().StaticPortMappingCollection;
+			mapping.Remove(eport, type.ToString().ToUpper());
+		}
 	}
 }
